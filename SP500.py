@@ -43,7 +43,7 @@ def read_prices(csvfile, _strptime=datetime.strptime):
         for row in reader:
             yield DataPoint(
                 date=_strptime(row["Date"], "%Y-%m-%d").date(),
-                value=float(row["Open"]) - float(row["Close"]),
+                value=float(row["Close"]) - float(row["Open"]),
             )
 
 
